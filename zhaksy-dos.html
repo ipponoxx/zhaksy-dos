@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="kk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>Жақсы дос — ашық сабақ</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1b3a8a;--card:#fffffff0;--g1:#4fc3f7;--g2:#eaf8ff;--ok:#2e9e4f;--bad:#e53935;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#eaf1ff;--card:#1d3070f0;--g1:#0b1e4d;--g2:#1f3f94}}
+:root[data-theme="dark"]{--ink:#eaf1ff;--card:#1d3070f0;--g1:#0b1e4d;--g2:#1f3f94}
+html,body{height:100%;margin:0}
+body{font-family:Nunito,'Segoe UI',Arial,sans-serif;background:linear-gradient(160deg,var(--g1),var(--g2));color:var(--ink);overflow:hidden;position:relative;user-select:none}
+.bg i{position:fixed;font-style:normal;pointer-events:none;z-index:0;animation:fl linear infinite}
+@keyframes fl{from{transform:translateX(-20vw)}to{transform:translateX(120vw)}}
+@keyframes tw{50%{transform:scale(1.6) rotate(40deg);opacity:.3}}
+.s{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:2.2vh;padding:3vh 5vw 12vh;text-align:center;z-index:1;overflow:auto}
+.s.active{display:flex;animation:var(--tr) .9s both}
+@keyframes t0{from{opacity:0;transform:translateX(10vw)}}@keyframes t1{from{opacity:0;transform:scale(1.2)}}@keyframes t2{from{opacity:0;transform:rotate(4deg) translateY(8vh)}}@keyframes t3{from{clip-path:circle(0%)}to{clip-path:circle(150%)}}
+.s.active .a{animation:var(--an,up) .85s cubic-bezier(.2,1.5,.4,1) var(--d,0s) backwards}
+.u{--an:up}.l{--an:lf}.r{--an:rt}.z{--an:zm}
+@keyframes up{from{opacity:0;transform:translateY(7vh) scale(.9)}}@keyframes lf{from{opacity:0;transform:translateX(-14vw) rotate(-6deg)}}@keyframes rt{from{opacity:0;transform:translateX(14vw) rotate(6deg)}}@keyframes zm{from{opacity:0;transform:scale(.2) rotate(-14deg)}}
+h2{margin:0;font-size:clamp(24px,4.6vw,50px);background:#ffc107;color:#1b3a8a;padding:.2em .9em;border-radius:99px;box-shadow:0 5px 0 #c79100}
+.tt{font-size:clamp(48px,13vw,150px);font-weight:900;line-height:1;margin:0;background:linear-gradient(90deg,#1b3a8a,#e91e63,#ff9800,#1b3a8a);background-size:300%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:sh 4s linear infinite}
+@keyframes sh{to{background-position:300%}}
+.big{font-size:clamp(20px,3.6vw,40px);font-weight:900}.e{font-size:clamp(34px,8vmin,80px);display:block}
+.hero{font-size:clamp(60px,16vmin,160px);animation:bob 3s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-3vh) rotate(5deg)}}
+.g{display:grid;gap:2vmin;grid-template-columns:repeat(auto-fit,minmax(min(210px,42vw),1fr));width:min(1100px,100%)}.g.col{grid-template-columns:1fr;width:min(760px,100%)}
+.c{background:var(--card);border-radius:22px;padding:2vmin;box-shadow:0 8px 22px #0003;font-weight:800;font-size:clamp(16px,2.3vw,26px);transition:.25s}
+.c:hover{transform:translateY(-6px) rotate(-1deg);box-shadow:0 14px 30px #0004}
+.f{perspective:900px;cursor:pointer;height:clamp(110px,22vh,190px)}.f>div{position:relative;height:100%;transform-style:preserve-3d;transition:.75s}.f.on>div{transform:rotateY(180deg)}
+.fa,.fb{position:absolute;inset:0;backface-visibility:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center}.fb{transform:rotateY(180deg);background:#fff7d6;color:#1b3a8a}
+.rv{cursor:pointer;text-align:left}.rv em{display:inline-block;max-width:0;opacity:0;overflow:hidden;white-space:nowrap;vertical-align:bottom;transition:max-width .9s,opacity .9s;font-style:normal;color:var(--ok)}.rv.on em{max-width:30em;opacity:1;margin-left:.4em}
+button{font:inherit;font-weight:800;border:0;border-radius:16px;padding:1.1vh 2vw;background:#0288d1;color:#fff;cursor:pointer;transition:.2s;box-shadow:0 4px 0 #016aa3}button:hover{transform:translateY(-3px) scale(1.04)}
+.op{font-size:clamp(16px,2.4vw,28px);padding:2vh 2vw}.done button{pointer-events:none}
+.ok{background:#c8f7d4!important;color:#1b3a8a;outline:4px solid var(--ok)}.bad{background:#ffd6d6!important;color:#1b3a8a;outline:4px solid var(--bad);animation:sk .4s}@keyframes sk{25%{transform:translateX(-8px)}75%{transform:translateX(8px)}}
+.c b{display:block;min-height:1.4em}
+.dn span{font-size:12vmin;display:inline-block;animation:dn 1s ease-in-out infinite;animation-delay:calc(var(--i)*.15s)}@keyframes dn{50%{transform:translateY(-4vh) rotate(9deg)}}
+#tree{position:relative}#tree i{position:absolute;font-style:normal;animation:gr .8s cubic-bezier(.2,1.6,.4,1)}@keyframes gr{from{transform:scale(0)}}
+.cf{position:fixed;z-index:60;pointer-events:none;font-style:normal;animation:bm 1.5s ease-out forwards}@keyframes bm{to{transform:translate(var(--x),calc(var(--y) + 320px)) rotate(var(--r));opacity:0}}
+.nx{position:fixed;right:4vw;bottom:calc(2.2vh + env(safe-area-inset-bottom,0px));z-index:20;overflow:hidden;font-size:clamp(16px,2.2vw,26px);padding:1.4vh 2.6vw;border-radius:99px;color:#fff;background:linear-gradient(135deg,#ff9800,#ff5722);box-shadow:0 6px 0 #c43e00,0 10px 26px #ff980088;animation:pl 2s ease-in-out infinite}
+@keyframes pl{50%{box-shadow:0 6px 0 #c43e00,0 0 34px 8px #ffc107aa}}
+.nx span{display:inline-block;transition:.3s}.nx:hover{transform:translateY(-5px) scale(1.1);box-shadow:0 11px 0 #c43e00,0 0 44px #ffc107}.nx:hover span{transform:translateX(9px)}.nx:active{transform:translateY(3px) scale(.96)}
+.nx::after{content:'';position:absolute;top:0;left:-60%;width:40%;height:100%;background:linear-gradient(90deg,transparent,#fff9,transparent);transform:skewX(-20deg);transition:left .6s}.nx:hover::after{left:130%}
+.pv{position:fixed;left:4vw;bottom:calc(2.2vh + env(safe-area-inset-bottom,0px));z-index:20;background:#ffffffcc;color:#1b3a8a;box-shadow:0 4px 0 #9aa;border-radius:99px;font-size:clamp(16px,2vw,24px)}
+#tm{position:fixed;top:calc(1.5vh + env(safe-area-inset-top,0px));left:3vw;z-index:20;background:#fff;color:#1b3a8a;box-shadow:0 4px 0 #9aa;border-radius:99px;padding:.7vh 1.6vw;font-size:clamp(14px,1.8vw,20px)}
+#ct{position:fixed;top:calc(1.5vh + env(safe-area-inset-top,0px));right:3vw;z-index:20;font-weight:900}#pb{position:fixed;top:0;left:0;height:6px;background:linear-gradient(90deg,#ffc107,#ff5722);z-index:30;transition:width .6s}
+#cur{position:fixed;inset:0;z-index:50}.cp{position:absolute;top:0;bottom:0;width:50%;background:repeating-linear-gradient(90deg,#5a0b14 0 3.2vw,#c0283a 3.2vw 6.4vw);box-shadow:inset 0 0 90px #0009;transition:transform 2.6s cubic-bezier(.7,0,.25,1)}
+.L{left:0;transform-origin:left;border-right:6px solid #ffc107}.R{right:0;transform-origin:right;border-left:6px solid #ffc107}
+#cur.open .L{transform:scaleX(.1)}#cur.open .R{transform:scaleX(.1)}
+.cm{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2vh;color:#ffe9a8;text-shadow:0 3px 12px #000;transition:opacity .7s}#cur.open .cm{opacity:0;pointer-events:none}
+.cm h1{font-size:clamp(40px,10vw,110px);margin:0}.cm .em{font-size:14vmin;animation:bob 2s infinite}.cm button{font-size:clamp(18px,3vw,30px);padding:2vh 4vw;border-radius:99px;background:linear-gradient(135deg,#ffc107,#ff9800);color:#5a0b14;box-shadow:0 6px 0 #a56a00;animation:pl 1.6s infinite}
+#tm{display:none!important}.bg i svg{width:100%;height:auto}
+@keyframes rot{to{transform:rotate(360deg)}}.sun{transform-box:fill-box;transform-origin:center;animation:rot 50s linear infinite}
+@keyframes sw{0%,100%{transform:rotate(-2deg)}50%{transform:rotate(2deg)}}.fw{animation:sw 7s ease-in-out infinite;transform-box:fill-box;transform-origin:50% 100%}
+.kd{height:var(--h,24vh);width:auto;filter:drop-shadow(0 6px 6px #0003)}.ci{display:flex;justify-content:center;align-items:flex-end;gap:.5vw}.ci svg{height:11vh;width:auto}.ci .kd{height:12vh}
+.hero .kd{height:34vh}.hero{animation:bob 3s ease-in-out infinite}.rw{display:flex;justify-content:center;gap:3vw}.rw .kd{height:30vh}.rw span{display:inline-block;animation:dn 1.4s ease-in-out infinite;animation-delay:calc(var(--i)*.2s)}
+.nb{display:inline-grid;place-items:center;width:1.7em;height:1.7em;border-radius:50%;background:#ffc107;color:#1b3a8a;text-decoration:none;margin-right:.5em}
+#tree{display:inline-block;height:34vh}#tree>svg{height:100%;width:auto}#tree i svg{width:100%}#tree i{width:6vmin;font-size:0}.ci .ci,.f .ci svg{height:10vh}
+</style></head><body>
+<div class="bg" id="bg"></div><div id="pb"></div><div id="d"></div>
+<button id="tm" title="Таймерді қосу"></button><div id="ct"></div>
+<button class="pv" id="pv">◀</button><button class="nx" id="nx"></button>
+<div id="cur"><div class="cp L"></div><div class="cp R"></div><div class="cm"><div class="em">★</div><h1>Ашық сабақ</h1><p class="big">Қазақ тілі • 3-сынып</p><button id="op">Шымылдықты ашу ✨</button></div></div>
+<script>
+const kid=(o={})=>{const{sk='#ffd7b5',hr='#3b2314',sh='#42a5f5',pt='#1e3a8a',g=0,w=0}=o;
+const arm=(x,r)=>`<g transform="rotate(${r} ${x+6} 76)"><rect x="${x}" y="72" width="12" height="36" rx="6" fill="${sh}"/><circle cx="${x+6}" cy="110" r="7" fill="${sk}"/></g>`;
+return `<svg class="kd" viewBox="0 0 100 160"><ellipse cx="50" cy="156" rx="34" ry="4" fill="#0002"/>${g?`<path d="M30 112h40l10 26H20z" fill="${pt}"/><rect x="36" y="134" width="9" height="18" rx="4" fill="${sk}"/><rect x="55" y="134" width="9" height="18" rx="4" fill="${sk}"/>`:`<rect x="34" y="110" width="13" height="42" rx="6" fill="${pt}"/><rect x="53" y="110" width="13" height="42" rx="6" fill="${pt}"/>`}<ellipse cx="40" cy="153" rx="11" ry="5.5" fill="#fff" stroke="#9aa"/><ellipse cx="60" cy="153" rx="11" ry="5.5" fill="#fff" stroke="#9aa"/>${arm(15,6)}${arm(73,w?-150:-6)}<rect x="28" y="66" width="44" height="52" rx="17" fill="${sh}"/><path d="M42 66q8 9 16 0" fill="${sk}"/>${g?`<circle cx="21" cy="50" r="10" fill="${hr}"/><circle cx="79" cy="50" r="10" fill="${hr}"/>`:''}<circle cx="50" cy="42" r="28" fill="${sk}"/><path d="M21 42Q18 8 50 10Q82 8 79 42Q70 22 50 24Q30 22 21 42Z" fill="${hr}"/>${g?`<path d="M40 12l10 7 10-7-3 13H43z" fill="#ff4081"/>`:''}<circle cx="39" cy="46" r="3.6" fill="#222"/><circle cx="61" cy="46" r="3.6" fill="#222"/><circle cx="40.2" cy="44.8" r="1.2" fill="#fff"/><circle cx="62.2" cy="44.8" r="1.2" fill="#fff"/><circle cx="31" cy="55" r="4.5" fill="#ff8a80" opacity=".6"/><circle cx="69" cy="55" r="4.5" fill="#ff8a80" opacity=".6"/><path d="M40 56Q50 66 60 56" fill="#fff" stroke="#7a2e2e" stroke-width="2.4" stroke-linecap="round"/></svg>`};
+const K=[{},{g:1,hr:'#5b3a1e',sh:'#ff80ab',pt:'#7e57c2'},{hr:'#1b1b1b',sh:'#66bb6a',pt:'#455a64',sk:'#f1c27d'},{g:1,hr:'#c0392b',sh:'#ffca28',pt:'#26a69a',sk:'#ffe0c7'}];
+const k=(i,o={})=>kid({...K[i%4],...o});
+const heart=c=>`<svg viewBox="0 0 100 100"><path d="M50 88C8 58 8 18 32 18c9 0 15 7 18 13 3-6 9-13 18-13 24 0 24 40-18 70z" fill="${c}"/><path d="M26 30q4-8 12-6" stroke="#fff8" stroke-width="5" fill="none" stroke-linecap="round"/></svg>`;
+const I={teddy:`<svg viewBox="0 0 100 100"><circle cx="24" cy="24" r="12" fill="#b9793a"/><circle cx="76" cy="24" r="12" fill="#b9793a"/><ellipse cx="50" cy="74" rx="27" ry="24" fill="#c98a4b"/><circle cx="50" cy="42" r="28" fill="#c98a4b"/><ellipse cx="50" cy="52" rx="13" ry="10" fill="#f3d3a4"/><circle cx="40" cy="38" r="3.6" fill="#222"/><circle cx="60" cy="38" r="3.6" fill="#222"/><ellipse cx="50" cy="48" rx="4.5" ry="3.2" fill="#222"/><path d="M38 68l12 6-12 6zM62 68l-12 6 12 6z" fill="#e53935"/></svg>`,
+gift:`<svg viewBox="0 0 100 100"><rect x="14" y="42" width="72" height="46" rx="6" fill="#e53935"/><rect x="9" y="32" width="82" height="16" rx="5" fill="#ff5252"/><rect x="44" y="32" width="12" height="56" fill="#ffd54f"/><path d="M50 32Q28 4 24 22q4 12 26 10zM50 32Q72 4 76 22q-4 12-26 10z" fill="#ffd54f"/></svg>`,
+book:`<svg viewBox="0 0 100 100"><path d="M8 22Q30 12 50 24V86Q30 74 8 84z" fill="#fff" stroke="#1b3a8a" stroke-width="4" stroke-linejoin="round"/><path d="M92 22Q70 12 50 24V86Q70 74 92 84z" fill="#fff" stroke="#1b3a8a" stroke-width="4" stroke-linejoin="round"/><path d="M16 36q14-5 26 4M16 50q14-5 26 4M58 40q12-9 26-4M58 54q12-9 26-4" stroke="#42a5f5" stroke-width="3" fill="none" stroke-linecap="round"/></svg>`,
+apple:`<svg viewBox="0 0 100 100"><path d="M50 30C20 12 8 44 22 70c8 14 20 20 28 14 8 6 20 0 28-14C92 44 80 12 50 30z" fill="#e53935"/><path d="M50 30q0-14 8-20" stroke="#6d4c41" stroke-width="5" fill="none" stroke-linecap="round"/><path d="M54 18q16-10 24 2-14 8-24-2z" fill="#43a047"/></svg>`,
+bubble:`<svg viewBox="0 0 120 90"><path d="M60 6C26 6 6 24 6 42s20 34 54 34c6 0 10 0 15-1l22 14-4-22c10-6 21-14 21-25C114 24 94 6 60 6z" fill="#fff" stroke="#42a5f5" stroke-width="4"/><text x="60" y="56" font-size="44" font-weight="900" text-anchor="middle" fill="#ff9800">?</text></svg>`,
+q:`<svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="#ffb74d" stroke="#fff" stroke-width="6"/><text x="50" y="72" font-size="68" font-weight="900" text-anchor="middle" fill="#fff">?</text></svg>`,
+tree:`<svg viewBox="0 0 200 220"><rect x="88" y="120" width="24" height="95" rx="8" fill="#8d5524"/><g fill="#43a047"><circle cx="100" cy="68" r="56"/><circle cx="52" cy="108" r="42"/><circle cx="148" cy="108" r="42"/></g><g fill="#66bb6a"><circle cx="80" cy="50" r="22"/><circle cx="130" cy="90" r="18"/></g></svg>`};
+const ci=(...a)=>`<div class="ci">${a.join('')}</div>`;
+const h=(t,b)=>`<h2 class="a u">${t}</h2>${b}`;
+const fl=a=>`<div class="g">${a.map(([f,b])=>`<div class="f a z"><div><div class="fa c">${f}</div><div class="fb c">${b}</div></div></div>`).join('')}</div>`;
+const rv=(a,c='')=>`<div class="g ${c}">${a.map(([l,r])=>`<div class="c a l rv"><span>${l}</span><em>${r}</em></div>`).join('')}</div>`;
+const qz=(q,o,n)=>`<div class="c a z big">${q}</div><div class="g">${o.map((t,i)=>`<button class="op a ${'lur'[i]}" data-k="${i==n?1:0}">${t}</button>`).join('')}</div><div class="big a" id="fb"></div>`;
+const jd=a=>`<div class="g">${a.map(([ic,t,g])=>`<div class="c a u" data-g="${g}">${ic?ci(ic):''}<div>${t}</div><button class="jb" data-v="1">Жақсы ✓</button> <button class="jb" data-v="0" style="background:#e53935;box-shadow:0 4px 0 #9b1c1c">Жаман ✗</button><b></b></div>`).join('')}</div>`;
+const nb=n=>`<u class="nb">${n}</u>`;
+const V=[[ci(k(0),k(1)),'дос','Менің досым бар.'],[ci(k(0),heart('#ff4d6d'),k(1)),'жақсы дос','Жақсы дос көмектеседі.'],[ci(k(2,{w:1}),k(3,{w:1})),'бірге','Біз бірге ойнаймыз.'],[ci(I.teddy),'ойыншық','Менің ойыншығым бар.'],[ci(k(3)),'ерке','Мен ерке емеспін.'],[ci(k(2),k(1)),'тату','Біз өте татумыз.'],[ci(k(0,{w:1}),I.book),'көмектесу','Мен досыма көмектесемін.'],[ci(I.gift),'бөлісу','Мен ойыншығыммен бөлісемін.']];
+const M=[2,2,2,4,3,5,4,4,3,6,4,2,4,3,4,3,3,1,1];
+const row=()=>`<div class="rw">${[0,1,2,3].map(i=>`<span style="--i:${i}">${k(i,{w:i%2})}</span>`).join('')}</div>`;
+const S=[
+`<div class="hero a z"><span class="side">${k(0,{w:1})}</span></div><h1 class="tt a u">Жақсы дос</h1><div class="big a u">«Досы бардың – ырысы бар»</div><h2 class="a z">3-сынып</h2><div class="hero a z" style="position:fixed;right:6vw;bottom:9vh"><span class="side">${k(1,{w:1})}</span></div>`,
+h('Сабақ туралы',`<div class="g">${[[I.book,'Пәні','Қазақ тілі'],[heart('#ff4d6d'),'Тақырыбы','Жақсы дос'],[I.gift,'Түрі','Ашық сабақ'],[I.teddy,'Сыныбы','3-сынып']].map(([e,a,b])=>`<div class="c a z">${ci(e)}${a}<br><span style="color:#e65100">${b}</span></div>`).join('')}</div>`),
+h('Сабақтың мақсаты',`<div class="c a l big" style="max-width:880px">Оқушыларға жақсы достың қасиеттерін түсіндіру, дос туралы өз ойын қазақ тілінде жеткізуге үйрету.</div><div style="display:flex;gap:3vw;align-items:center;flex-wrap:wrap;justify-content:center"><div style="flex:1;min-width:280px;max-width:640px">${rv([['✔ Жаңа сөздерді меңгерту;',''],['✔ Сурет бойынша сөйлем құрату;',''],['✔ Сұраққа толық жауап беруге үйрету;',''],['✔ Достыққа тәрбиелеу.','♥']],'col')}</div>${ci(k(0),k(1,{w:1}))}</div>`),
+h('Жаңа сөздер <small>(карточканы бас)</small>',fl(V.map(([e,w,s])=>[`${e}${w}`,s]))),
+h('Қызығушылықты ояту',row()+['Дос деген кім?','Сенің досың бар ма?','Жақсы дос қандай болады?'].map(t=>`<div class="c a l big">${t}</div>`).join('')+`<div class="a z ci">${I.bubble}</div>`),
+h('Жаңа сөздермен жұмыс <small>(бұл қай сөз?)</small>',fl(V.map(([e,w])=>[`${e}<span style="color:#e65100">Бұл қай сөз?</span>`,`<span class="big">${w}</span>`]))),
+h('Оқулықпен жұмыс: бұл жақсы ма, жаман ба?',jd([[I.book,'Айдос досымен бірге кітап оқиды.',1],[k(3),'Дана досын ойынға қоспады.',0],[I.teddy,'Балалар ойыншықпен бөлісті.',1],[k(2),'Ерлан досын мазақтады.',0]])),
+h('1-тапсырма: жағдаяттарды талқылайық <small>(бас!)</small>',rv([[nb(1)+'Менде екі алма бар. Мен бір алманы досыма беремін.','✓ Бұл жақсы!'],[nb(2)+'Досыма қызыл қарындаш керек. Мен оған қарындаш беремін.','✓ Бұл жақсы!'],[nb(3)+'Менің көп ойыншығым бар. Мен досыммен бірге ойнаймын.','✓ Бұл жақсы!'],[nb(4)+'Менің қызыл ертегі кітабым бар. Мен досыма оқып беремін.','✓ Бұл жақсы!']],'col')),
+h('Дұрыс жауапты тап!',ci(k(0),k(3,{w:1}))+qz('Жақсы дос не істейді?',['Көмектеседі','Мазақтайды','Ренжітеді'],0)),
+h('Топтық жұмыс',`<div class="g">${[[heart('#ff4d6d'),'1-топ','Жақсы дос қандай болады?'],[k(0),'2-топ','Жақсы дос не істейді?'],[ci(k(1),k(2)),'3-топ','Досымен не істейсің?']].map(([e,a,b])=>`<div class="c a z">${ci(e)}${a}<br><span style="color:#e65100">${b}</span></div>`).join('')}</div><div class="c a u">Топпен ақылдасып, өз ойларыңды айтыңдар. Қорғаңдар!</div>`),
+h('Жұптық жұмыс «Менің досым»',`<div style="display:flex;gap:3vw;align-items:center;flex-wrap:wrap;justify-content:center"><div class="g col" style="flex:1;min-width:280px">${['Сенің досың бар ма?','Досыңның аты кім?','Досың қандай?','Досыңмен не істейсің?','Досыңа көмектесесің бе?'].map(t=>`<div class="c a l">${t}</div>`).join('')}</div>${ci(k(2),k(3))}</div>`),
+h('Сергіту сәті',row()+`<div class="big a u" style="font-size:7vmin">Достық – бақыт! ♪ ♫</div>`),
+h('Ойын: «Жақсы дос па?»',`<div class="big a z" id="sc">★ 0 / 6</div>`+jd([['','Досыңа көмектестің.',1],['','Досыңның ойыншығын тартып алдың.',0],['','Ойыншығыңмен бөлістің.',1],['','Досыңды мазақтадың.',0],['','Досыңмен бірге ойнадың.',1],['','Досыңды ренжіттің.',0]])),
+h('Мақал-мәтел: дос туралы',fl(['Досы көптің – жауы аз.','Дос жылатып айтады, дұшпан күлдіріп айтады.','Дос күлдірер, дұшпан күйдірер.'].map(t=>[ci(I.q)+'Басып оқы!',t]))),
+h('Бекіту: сөйлемді аяқта',rv([['Жақсы дос –','мейірімді.'],['Жақсы дос –','көмектеседі.'],['Жақсы дос –','бөліседі.'],['Жақсы дос –','досын ренжітпейді.'],['Жақсы дос –','бірге ойнайды.'],['Жақсы дос –','адал болады.']])),
+h('Дұрыс жауапты тап!',ci(I.teddy)+qz('«Ойыншық» сөзі нені білдіреді?',['Оқитын кітап','Ойнайтын зат','Жейтін тағам'],1)),
+h('Рефлексия «Достық ағашы»',`<div id="tree" class="a z">${I.tree}</div><div class="g" style="width:min(900px,100%)"><button class="hb a l" data-h="#2e9e4f" style="background:#2e9e4f">Мен бәрін түсіндім</button><button class="hb a u" data-h="#f9a825" style="background:#f9a825;color:#1b3a8a">Маған жаттығу керек</button><button class="hb a r" data-h="#e53935" style="background:#e53935">Маған көмек қажет</button></div>`),
+h('Үй тапсырмасы',`<div style="display:flex;gap:3vw;align-items:center;flex-wrap:wrap;justify-content:center"><div><div class="c a z big" style="max-width:760px">«Менің жақсы досым» тақырыбына 3–4 сөйлем жазу немесе сурет салу.</div><div class="c a u" style="max-width:760px;text-align:left;margin-top:2vh">Мысалы: Менің досымның аты – Аян. Ол мейірімді және көңілді. Біз бірге ойнаймыз. Ол маған көмектеседі. Мен досымды жақсы көремін.</div></div>${ci(k(0,{w:1}))}</div>`),
+row()+`<h1 class="tt a u" style="font-size:clamp(40px,10vw,110px)">Рақмет!</h1><div class="c a l big" style="max-width:800px">Жақсы дос – қуанышта бірге болатын, қиындықта көмектесетін, әрқашан қолдайтын адам.</div><h2 class="a z">Достықты бағалайық!</h2>`
+];
+const d=document.getElementById('d'),nx=document.getElementById('nx'),tm=document.getElementById('tm'),ct=document.getElementById('ct'),pb=document.getElementById('pb');
+d.innerHTML=S.map((x,k)=>`<section class="s" style="--tr:t${k%4}">${x}</section>`).join('');
+const bg=document.getElementById('bg');
+const cl='<svg viewBox="0 0 120 60"><g fill="#fff"><ellipse cx="40" cy="38" rx="32" ry="18"/><ellipse cx="72" cy="32" rx="30" ry="22"/><ellipse cx="95" cy="42" rx="22" ry="14"/></g></svg>';
+let sv='<svg viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice" style="position:fixed;inset:0;width:100%;height:100%"><g class="sun"><circle cx="1420" cy="130" r="62" fill="#ffd54f"/>';
+for(let r=0;r<12;r++)sv+=`<rect x="1412" y="20" width="16" height="36" rx="8" fill="#ffd54f" transform="rotate(${r*30} 1420 130)"/>`;
+sv+='</g><ellipse cx="380" cy="930" rx="820" ry="270" fill="#8be06a"/><ellipse cx="1260" cy="950" rx="820" ry="240" fill="#5cc845"/>';
+for(const [x,y,s] of [[150,690,1],[1480,700,1.1],[1330,730,.7]])sv+=`<g transform="translate(${x} ${y}) scale(${s})"><rect x="-10" y="0" width="20" height="90" rx="6" fill="#8d5524"/><circle cx="0" cy="-10" r="52" fill="#2e9e4f"/><circle cx="-34" cy="22" r="36" fill="#43a047"/><circle cx="34" cy="22" r="36" fill="#43a047"/></g>`;
+for(let f=0;f<34;f++){const x=(f*97)%1600,y=800+(f*53)%90,c=['#ff4081','#ffeb3b','#ffffff','#ff9800'][f%4];sv+=`<g transform="translate(${x} ${y})"><g class="fw" style="animation-delay:-${f*1.3%6}s"><rect x="-1.5" y="0" width="3" height="22" fill="#2e7d32"/><circle r="9" cy="-2" fill="${c}"/><circle r="4" cy="-2" fill="#ff8f00"/></g></g>`}
+bg.innerHTML=sv+'</svg>';
+for(let n=0;n<6;n++)bg.insertAdjacentHTML('beforeend',`<i style="top:${4+n*11}vh;width:${12+n%3*5}vmin;opacity:.85;animation-duration:${50+n*9}s;animation-delay:-${n*13}s">${cl}</i>`);
+for(let n=0;n<14;n++)bg.insertAdjacentHTML('beforeend',`<i style="left:${n*7.3}vw;top:${(n*37)%80}vh;width:3vmin;animation:tw ${2+n%4}s ease-in-out ${n*.3}s infinite"><svg viewBox="0 0 20 20"><path d="M10 0l2 8 8 2-8 2-2 8-2-8-8-2 8-2z" fill="#ffd54f"/></svg></i>`);
+function boom(x,y){for(let k=0;k<30;k++){const e=document.createElement('i');e.className='cf';e.textContent=['⭐','✨','💛','🎉','💖'][k%5];e.style.cssText=`left:${x}px;top:${y}px;font-size:${3+Math.random()*3}vmin;--x:${(Math.random()-.5)*700}px;--y:${-Math.random()*420-80}px;--r:${Math.random()*720}deg`;document.body.append(e);setTimeout(()=>e.remove(),1600)}}
+let i=-1,T=0,sc=0;
+function go(n){n=Math.max(0,Math.min(S.length-1,n));if(n==i)return;i=n;if(n==12)sc=0;clearInterval(T);T=0;const L=S.length-1;
+[...d.children].forEach((s,k)=>s.classList.toggle('active',k==n));
+d.children[n].querySelectorAll('.a').forEach((e,k)=>e.style.setProperty('--d',(k*.13+.3+(n?0:1.8))+'s'));
+tm.textContent='⏱ '+M[n]+' мин';ct.textContent=(n+1)+' / '+S.length;pb.style.width=(n+1)/S.length*100+'%';
+nx.innerHTML=n==L?'Басына <span>↺</span>':'Келесі <span>➜</span>';if(n==L)setTimeout(()=>boom(innerWidth/2,innerHeight/3),1000)}
+nx.onclick=()=>go(i==S.length-1?0:i+1);pv.onclick=()=>go(i-1);
+document.onkeydown=e=>{if(['ArrowRight',' ','PageDown'].includes(e.key))nx.click();if(['ArrowLeft','PageUp'].includes(e.key))go(i-1)};
+let x0;document.ontouchstart=e=>x0=e.touches[0].clientX;document.ontouchend=e=>{const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>70)dx<0?nx.click():go(i-1)};
+tm.onclick=()=>{if(T){clearInterval(T);T=0;tm.textContent='⏱ '+M[i]+' мин';return}let s=M[i]*60;T=setInterval(()=>{s--;tm.textContent='⏳ '+(s/60|0)+':'+String(s%60).padStart(2,'0');if(s<=0){clearInterval(T);T=0;tm.textContent='⏰ Уақыт!';boom(innerWidth/2,innerHeight/2)}},1000)};
+document.addEventListener('click',e=>{const t=e.target,b=t.closest('button.op,button.jb,button.hb,.f,.rv');if(!b)return;
+if(b.matches('.f'))b.classList.toggle('on');
+else if(b.matches('.rv')){b.classList.toggle('on');if(b.classList.contains('on'))boom(e.clientX,e.clientY)}
+else if(b.matches('.op')){const ok=+b.dataset.k;b.classList.add(ok?'ok':'bad');b.parentNode.classList.add('done');document.getElementById('fb').textContent=ok?'🎉 Жарайсың! Дұрыс!':'🤔 Қайта ойлан, тағы байқап көр!';if(ok)boom(e.clientX,e.clientY);else setTimeout(()=>{b.parentNode.classList.remove('done')},700)}
+else if(b.matches('.jb')){const c=b.closest('.c');if(c.classList.contains('ok')||c.classList.contains('bad'))return;const ok=+b.dataset.v==+c.dataset.g;c.classList.add(ok?'ok':'bad');c.querySelector('b').textContent=ok?'✓ Дұрыс!':'✗ Қайта ойлан';if(ok){boom(e.clientX,e.clientY);sc++;const s=document.getElementById('sc');if(s&&i==12)s.textContent='★ '+sc+' / 6'}}
+else if(b.matches('.hb')){const tr=document.getElementById('tree');tr.insertAdjacentHTML('beforeend',`<i style="left:${10+Math.random()*70}%;top:${5+Math.random()*55}%">${heart(b.dataset.h)}</i>`);boom(e.clientX,e.clientY)}});
+document.getElementById('op').onclick=()=>{document.getElementById('cur').classList.add('open');go(0);setTimeout(()=>document.getElementById('cur').style.display='none',2800)};
+</script></body></html>
